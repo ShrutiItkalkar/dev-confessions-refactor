@@ -17,3 +17,10 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+try {
+  require('./routes/confessionRoutes')
+  console.log("Routes loaded ✅")
+} catch (e) {
+  console.error("Routes error ❌", e)
+}
